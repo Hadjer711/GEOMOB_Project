@@ -44,7 +44,7 @@
 
         <fragment
             android:id="@+id/fragment"
-            android:name="com.example.geomob.PaysDetail"
+            android:name="com.example.geomob.FRAGMENTS.PaysDetail"
             android:layout_width="wrap_content"
             android:layout_height="635dp"
             android:layout_weight="1" />

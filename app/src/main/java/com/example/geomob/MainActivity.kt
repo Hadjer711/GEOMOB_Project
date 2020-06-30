@@ -7,6 +7,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.geomob.BD.*
+import com.example.geomob.UTILS.PaysAdapter
 import com.example.projetgeomob.DataBase
 import com.example.projetgeomob.PaysDAO
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,7 +19,9 @@ class MainActivity : AppCompatActivity(), PaysAdapter.OnLivreListener {
     private lateinit var paysAdapter: PaysAdapter
     private var db: DataBase? = null
     private var dao: PaysDAO? = null
-
+    private var daoHistorique: HistoriqueDAO? = null
+    private var daoPersonnalite: PersonnaliteDAO? = null
+    private var daoRessource: RessourceDAO? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,9 +40,20 @@ class MainActivity : AppCompatActivity(), PaysAdapter.OnLivreListener {
     }
     private fun addDataSet(){
         val data= DataSource.createDataSet()
+        val historique= Historique(1,"date test", "descriptiontest")
+        val ressource= Ressource(1, "test", "test", "test")
+        val personnalite= Personnalite(1,"hey", "teststst", "lien")
+        this.db = DataBase.invoke(this)
+        this.daoHistorique = db?.historiqueDAO()
+        this.daoPersonnalite = db?.personnaliteDAO()
+        this.daoRessource = db?.ressourceDAO()
+        this.daoPersonnalite?.ajouter(personnalite)
+        this.daoRessource?.ajouter(ressource)
+        this.daoHistorique?.ajouter(historique)
+
+
 
         for(pays in data){
-            this.db = DataBase.invoke(this)
             this.dao = db?.paysDAO()
             this.dao?.ajouter(pays)
 

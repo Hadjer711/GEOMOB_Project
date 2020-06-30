@@ -2,8 +2,7 @@ package com.example.projetgeomob
 
 
 import androidx.room.*
-import com.example.geomob.Pays
-import java.util.*
+import com.example.geomob.BD.Pays
 
 
 @Dao
@@ -15,7 +14,7 @@ public interface PaysDAO {
     fun getOnePays(num: Int): List<Pays>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun ajouter(pays: Pays )
+    fun ajouter(pays: Pays)
 
 }
 

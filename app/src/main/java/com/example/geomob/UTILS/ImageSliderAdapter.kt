@@ -1,4 +1,4 @@
-package com.example.geomob
+package com.example.geomob.UTILS
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,13 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.example.geomob.R
 import kotlinx.android.synthetic.main.image_slider_item.view.*
 
 class ImageSliderAdapter(private val context: Context) : PagerAdapter() {
 
 
     private var inflater: LayoutInflater? = null
-    private val images = arrayOf(R.drawable.slide1, R.drawable.slide2, R.drawable.slide3)
+    private val images = arrayOf(
+        R.drawable.slide1,
+        R.drawable.slide2,
+        R.drawable.slide3
+    )
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
 

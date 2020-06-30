@@ -1,9 +1,10 @@
-package com.example.geomob
+package com.example.geomob.BD
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.geomob.BD.Personnalite
 
 
 @Dao
@@ -15,7 +16,7 @@ public interface PersonnaliteDAO {
     fun getOnePersonnalite(num: Int): List<Personnalite>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun ajouter(personnalite: Personnalite )
+    fun ajouter(personnalite: Personnalite)
 
     // get of one pays
 

@@ -1,4 +1,4 @@
-package com.example.geomob
+package com.example.geomob.BD
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

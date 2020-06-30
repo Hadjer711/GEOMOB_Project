@@ -5,13 +5,15 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.geomob.Pays
+import com.example.geomob.BD.*
 
 
-
-@Database(entities = [Pays::class], version = 1, exportSchema = false)
+@Database(entities = [Pays::class, Historique::class, Ressource::class, Personnalite::class], version = 1, exportSchema = false)
 abstract class DataBase :RoomDatabase(){
     abstract fun paysDAO(): PaysDAO
+    abstract fun historiqueDAO(): HistoriqueDAO
+    abstract fun ressourceDAO(): RessourceDAO
+    abstract fun personnaliteDAO(): PersonnaliteDAO
     companion object {
         @Volatile private var instance: DataBase? = null
         private val LOCK = Any()

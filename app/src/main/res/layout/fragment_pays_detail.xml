@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".PaysDetail"
+    tools:context=".FRAGMENTS.PaysDetail"
     android:id="@+id/frameLayout">
 
     <!-- TODO: Update blank fragment layout -->
@@ -17,81 +17,6 @@
         tools:layout_conversion_absoluteWidth="411dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
-
-        <Button
-            android:id="@+id/video"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:background="@color/endColor"
-            android:text="Video"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.152"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/historique"
-            app:layout_constraintVertical_bias="0.217"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="88dp" />
-
-        <Button
-            android:id="@+id/wikipedia"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:background="@color/endColor"
-            android:text="Wikipedia"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.535"
-            app:layout_constraintStart_toEndOf="@+id/historique"
-            app:layout_constraintTop_toBottomOf="@+id/personnalites"
-            app:layout_constraintVertical_bias="0.217"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="88dp" />
-
-        <Button
-            android:id="@+id/tweet"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:background="@color/endColor"
-            android:text="Tweets"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.535"
-            app:layout_constraintStart_toEndOf="@+id/historique"
-            app:layout_constraintTop_toBottomOf="@+id/personnalites"
-            app:layout_constraintVertical_bias="0.873"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="88dp" />
-
-        <Button
-            android:id="@+id/ressouce"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:background="@color/endColor"
-            android:text="Ressources"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.152"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/historique"
-            app:layout_constraintVertical_bias="0.881"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="88dp" />
-
-        <Button
-            android:id="@+id/personnalites"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:background="@color/endColor"
-            android:text="Personnalités"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.535"
-            app:layout_constraintStart_toEndOf="@+id/historique"
-            app:layout_constraintTop_toBottomOf="@+id/list"
-            app:layout_constraintVertical_bias="0.094"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="88dp" />
 
         <ImageView
             android:id="@+id/pays_drapeau"
@@ -157,6 +82,7 @@
 
 
         <FrameLayout
+            android:id="@+id/frameLayout2"
             android:layout_width="421dp"
             android:layout_height="132dp"
             app:layout_constraintBottom_toTopOf="@+id/list"
@@ -164,64 +90,109 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pays_description">
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewpager"
-                android:layout_width="match_parent"
-
-                android:layout_height="200dp"></androidx.viewpager.widget.ViewPager>
-
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="top"
-                android:background="@android:color/transparent"
-                 />
+                android:background="@android:color/transparent" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+
+                android:layout_height="329dp"></androidx.viewpager.widget.ViewPager>
 
         </FrameLayout>
 
 
-
-        <RelativeLayout
-            android:id="@+id/list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="435dp"
+            android:layout_height="109dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pays_drapeau"
-            tools:context=".AndroidYoutubePlayerActivity"
-            tools:ignore="RedundantNamespace"
-            tools:layout_conversion_absoluteHeight="231dp"
-            tools:layout_conversion_absoluteWidth="411dp">
+            app:layout_constraintStart_toStartOf="parent">
 
-            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-                android:id="@+id/third_party_player_view"
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="157dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="match_parent">
 
-        </RelativeLayout>
+                <Button
+                    android:id="@+id/historique"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/endColor"
+                    android:text="Historique"
+                    tools:layout_conversion_absoluteHeight="48dp"
+                    tools:layout_conversion_absoluteWidth="88dp" />
 
-        <Button
-            android:id="@+id/historique"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:background="@color/endColor"
-            android:text="Historique"
-            app:layout_constraintBottom_toBottomOf="parent"
+                <Button
+                    android:id="@+id/ressouce"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/endColor"
+                    android:text="Ressources"
+                    tools:layout_conversion_absoluteHeight="48dp"
+                    tools:layout_conversion_absoluteWidth="88dp" />
+
+                <Button
+                    android:id="@+id/personnalites"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/endColor"
+                    android:text="Personnalités"
+                    tools:layout_conversion_absoluteHeight="48dp"
+                    tools:layout_conversion_absoluteWidth="88dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/video"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/round_button"
+                    android:text="Video"
+                    tools:layout_conversion_absoluteHeight="48dp"
+                    tools:layout_conversion_absoluteWidth="88dp" />
+
+                <Button
+                    android:id="@+id/wikipedia"
+                    android:layout_width="107dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/round_button"
+
+                    android:text="Wikipedia"
+                    tools:layout_conversion_absoluteHeight="48dp"
+                    tools:layout_conversion_absoluteWidth="88dp" />
+
+                <Button
+                    android:id="@+id/tweet"
+                    android:layout_width="100dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/round_button"
+                    android:drawableLeft="@drawable/ic_twitter"
+                    android:text="Twitter"
+                    tools:layout_conversion_absoluteHeight="48dp"
+                    tools:layout_conversion_absoluteWidth="88dp" />
+            </TableRow>
+
+        </TableLayout>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.152"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/list"
-            app:layout_constraintVertical_bias="0.094"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="88dp" />
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

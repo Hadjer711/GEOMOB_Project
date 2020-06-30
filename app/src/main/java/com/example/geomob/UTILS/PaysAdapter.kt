@@ -1,4 +1,4 @@
-package com.example.geomob
+package com.example.geomob.UTILS
 
 
 import android.view.LayoutInflater
@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.layout_pays_list_item.view.*
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.geomob.BD.Pays
+import com.example.geomob.R
 import kotlin.collections.ArrayList
 
 
@@ -21,7 +23,11 @@ class  PaysAdapter(var clickListner: OnLivreListener) : RecyclerView.Adapter<Rec
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return LivreViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.layout_pays_list_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.layout_pays_list_item,
+                parent,
+                false
+            )
         )
     }
 

@@ -1,15 +1,17 @@
-package com.example.geomob
+package com.example.geomob.BD
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.geomob.BD.Personnalite
+import com.example.geomob.BD.Ressource
 
 
 @Dao
 public interface RessourceDAO {
     @Query("SELECT * FROM ressource")
-    fun getRessource(): MutableList<Personnalite>
+    fun getRessource(): MutableList<Ressource>
 
     @Query("SELECT * FROM ressource WHERE id = :num")
     fun getOneRessource(num: Int): List<Ressource>

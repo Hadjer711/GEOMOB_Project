@@ -32,6 +32,8 @@ data class Pays(
 
     var ressource: Int?,
 
+    var wikipedia: String,
+
 
     var videos: String
 

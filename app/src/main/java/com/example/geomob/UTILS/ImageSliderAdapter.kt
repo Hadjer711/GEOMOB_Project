@@ -9,14 +9,16 @@ import androidx.viewpager.widget.ViewPager
 import com.example.geomob.R
 import kotlinx.android.synthetic.main.image_slider_item.view.*
 
-class ImageSliderAdapter(private val context: Context) : PagerAdapter() {
+class ImageSliderAdapter(private val context: Context, images:String) : PagerAdapter() {
 
+
+    //var imagesList= images.split(",").map { it.toInt() }.toTypedArray()
 
     private var inflater: LayoutInflater? = null
     private val images = arrayOf(
-        R.drawable.slide1,
-        R.drawable.slide2,
-        R.drawable.slide3
+        R.drawable.dz1,
+        R.drawable.dz2,
+        R.drawable.dz3
     )
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean {

@@ -14,11 +14,12 @@ class DataSource{
                     "https://s.france24.com/media/display/4094bd32-1d8c-11ea-8f09-005056a98db9/w:1280/p:16x9/ECO%20ALG%20%20PHOTO%20PLEIN%20ECRAN%20ALGERIE.webp",
                     2382000F,
                     42230000,
-                    "test",
+                    "dz1,dz2,dz3,dz4",
                     R.raw.hymne_algerie,
                     1,
                     1,
                     1,
+                    "https://fr.wikipedia.org/wiki/Alg%C3%A9rie",
                     "test"
                 )
 
@@ -31,11 +32,12 @@ class DataSource{
                     "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Tunisia.svg/1280px-Flag_of_Tunisia.svg.png",
                     163610F,
                     11570000,
-                    "test",
+                    "tu1,tu2,tu3",
                     R.raw.hymne_tunisie,
                     1,
                     1,
                     1,
+                    "https://fr.wikipedia.org/wiki/Tunisie",
                     "test"
                 )
 
@@ -49,11 +51,12 @@ class DataSource{
                     "https://www.eclacpos.org/wp-content/uploads/2019/03/drapeau_espagne_hd.png",
                     505990F,
                     46940000,
-                    "test",
+                    "es1,es2,es3",
                     R.raw.hymne_espagne,
                     1,
                     1,
                     1,
+                    "https://fr.wikipedia.org/wiki/Espagne",
                     "test"
                 )
 
@@ -66,11 +69,12 @@ class DataSource{
                     "https://www.romepratique.com/wp-content/uploads/2013/06/Drapeau-Liban-min.jpg",
                     10452F,
                     6849000,
-                    "test",
+                    "li1,li2,li3",
                     R.raw.hymne_liban,
                     1,
                     1,
                     1,
+                    "https://fr.wikipedia.org/wiki/Liban",
                     "test"
                 )
 
@@ -83,11 +87,12 @@ class DataSource{
                     "https://image.freepik.com/vecteurs-libre/drapeau-chine-dans-vent-partie-serie-agitant-drapeau-chine_126712-243.jpg",
                     9597000F,
                     1393000000,
-                    "test",
+                    "ci1,ci2,ci3",
                     R.raw.hymne_chine,
                     1,
                     1,
                     1,
+                    "https://fr.wikipedia.org/wiki/Chine",
                     "test"
                 )
 

@@ -51,6 +51,12 @@ class PaysDetailActivity : AppCompatActivity() {
         //go to tweets activity
 
         //go to wikipedia activity
+        wikipedia.setOnClickListener{
+            val wikipediaUrl:String?= getIntent().getStringExtra("wikipedia")
+            val intent= Intent(this, WikipediaActivity::class.java)
+            intent.putExtra("wikipedia", wikipediaUrl)
+            startActivity(intent)
+        }
 
         //go to ressources activity
 
@@ -80,8 +86,9 @@ class PaysDetailActivity : AppCompatActivity() {
     }
 
     private fun imageSliderImplementation() {
+        val images = getIntent().getStringExtra("images")
 
-        val adapter = ImageSliderAdapter(this)
+        val adapter = ImageSliderAdapter(this,images)
         viewpager.adapter = adapter
 
 

@@ -17,11 +17,11 @@ import kotlinx.android.synthetic.main.fragment_pays_detail.*
 class MainActivity : AppCompatActivity(), PaysAdapter.OnLivreListener {
     var toolbar: Toolbar? = null
     private lateinit var paysAdapter: PaysAdapter
-    private var db: DataBase? = null
-    private var dao: PaysDAO? = null
-    private var daoHistorique: HistoriqueDAO? = null
-    private var daoPersonnalite: PersonnaliteDAO? = null
-    private var daoRessource: RessourceDAO? = null
+    public var db: DataBase? = null
+    public var dao: PaysDAO? = null
+    public var daoHistorique: HistoriqueDAO? = null
+    public var daoPersonnalite: PersonnaliteDAO? = null
+    public var daoRessource: RessourceDAO? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,6 +90,9 @@ class MainActivity : AppCompatActivity(), PaysAdapter.OnLivreListener {
             intent.putExtra("drapeau", "drapeau : "+pays.drapeau)
             intent.putExtra("drapeau", pays.drapeau)
             intent.putExtra("hymne", pays.hymne)
+            intent.putExtra("images", pays.imagesSlides)
+
+            intent.putExtra("wikipedia", pays.wikipedia)
             startActivity(intent)
         }
 

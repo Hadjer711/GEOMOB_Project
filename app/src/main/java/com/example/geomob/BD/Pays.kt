@@ -24,7 +24,7 @@ data class Pays(
 
     var imagesSlides : String,
 
-    var hymne : String,
+    var hymne : Int,
 
     var historique: Int?,
 

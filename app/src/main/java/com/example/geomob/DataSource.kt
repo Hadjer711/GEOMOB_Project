@@ -15,7 +15,7 @@ class DataSource{
                     2382000F,
                     42230000,
                     "test",
-                    "test",
+                    R.raw.hymne_algerie,
                     1,
                     1,
                     1,
@@ -32,7 +32,7 @@ class DataSource{
                     163610F,
                     11570000,
                     "test",
-                    "test",
+                    R.raw.hymne_tunisie,
                     1,
                     1,
                     1,
@@ -40,23 +40,7 @@ class DataSource{
                 )
 
             )
-            list.add(
-                Pays(
-                    3,
-                    "France",
-                    "La France, pays de l'Europe occidentale, compte des villes médiévales, des villages alpins et des plages. Paris, sa capitale, est célèbre pour ses maisons de mode, ses musées d'art classique, dont celui du Louvre, et ses monuments comme la Tour Eiffel. Le pays est également réputé pour ses vins et sa cuisine raffinée.",
-                    "https://lh3.googleusercontent.com/proxy/-i7CRkXR83_Io2Ny6K3kqKWBm2DyKsEZSHEHonq03nlqhd4MhoxGfNnisG78caSZD9Rxo6diLT3EVJBYnn-v3XRGCbixEiHPxZ-IVnkNXHrB2fuLP7X-s1O9kzz4uLV1y6M",
-                    643801F,
-                    66990000,
-                    "test",
-                    "test",
-                    1,
-                    1,
-                    1,
-                    "test"
-                )
 
-            )
             list.add(
                 Pays(
                     4,
@@ -66,7 +50,7 @@ class DataSource{
                     505990F,
                     46940000,
                     "test",
-                    "test",
+                    R.raw.hymne_espagne,
                     1,
                     1,
                     1,
@@ -83,7 +67,7 @@ class DataSource{
                     10452F,
                     6849000,
                     "test",
-                    "test",
+                    R.raw.hymne_liban,
                     1,
                     1,
                     1,
@@ -100,7 +84,7 @@ class DataSource{
                     9597000F,
                     1393000000,
                     "test",
-                    "test",
+                    R.raw.hymne_chine,
                     1,
                     1,
                     1,

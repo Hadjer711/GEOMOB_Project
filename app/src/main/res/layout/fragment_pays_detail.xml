@@ -18,6 +18,20 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
+        <Button
+            android:id="@+id/audiostop"
+            android:layout_width="103dp"
+            android:layout_height="41dp"
+            android:background="@color/startColor"
+            android:text="STOP"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toTopOf="@+id/divider2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.762"
+            app:layout_constraintStart_toEndOf="@+id/audio"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
+            app:layout_constraintVertical_bias="0.834" />
+
         <ImageView
             android:id="@+id/pays_drapeau"
             android:layout_width="wrap_content"
@@ -80,15 +94,43 @@
             tools:layout_editor_absoluteX="10dp"
             tools:layout_editor_absoluteY="84dp" />
 
+        <TextView
+            android:id="@+id/pays_surface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="surface"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pays_population"
+            tools:layout_conversion_absoluteHeight="27dp"
+            tools:layout_conversion_absoluteWidth="392dp"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="84dp" />
+
+
+        <Button
+            android:id="@+id/audio"
+            android:layout_width="103dp"
+            android:layout_height="41dp"
+            android:background="@color/startColor"
+            android:text="Start"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toTopOf="@+id/divider2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.116"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
+            app:layout_constraintVertical_bias="0.834" />
 
         <FrameLayout
             android:id="@+id/frameLayout2"
             android:layout_width="421dp"
             android:layout_height="132dp"
-            app:layout_constraintBottom_toTopOf="@+id/list"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pays_description">
+            app:layout_constraintTop_toBottomOf="@+id/pays_surface">
 
 
             <androidx.appcompat.widget.Toolbar
@@ -102,17 +144,20 @@
                 android:id="@+id/viewpager"
                 android:layout_width="match_parent"
 
-                android:layout_height="329dp"></androidx.viewpager.widget.ViewPager>
+                android:layout_height="329dp">
+
+            </androidx.viewpager.widget.ViewPager>
 
         </FrameLayout>
 
 
         <TableLayout
             android:id="@+id/tableLayout"
-            android:layout_width="435dp"
-            android:layout_height="109dp"
+            android:layout_width="409dp"
+            android:layout_height="107dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent">
 
             <TableRow
@@ -192,6 +237,19 @@
             app:layout_constraintBottom_toTopOf="@+id/tableLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="189dp"
+            android:layout_height="37dp"
+            android:layout_marginBottom="108dp"
+            android:text="Hymne Nationale"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/divider2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
+            app:layout_constraintVertical_bias="0.945" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

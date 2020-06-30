@@ -86,7 +86,10 @@ class MainActivity : AppCompatActivity(), PaysAdapter.OnLivreListener {
             intent.putExtra("nom", "nom du pays : "+pays.nom)
             intent.putExtra("description", "Description du pays : " +pays.description)
             intent.putExtra("population", "population : "+pays.population)
+            intent.putExtra("surface", "surface : "+pays.surface)
+            intent.putExtra("drapeau", "drapeau : "+pays.drapeau)
             intent.putExtra("drapeau", pays.drapeau)
+            intent.putExtra("hymne", pays.hymne)
             startActivity(intent)
         }
 

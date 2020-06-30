@@ -4,12 +4,11 @@ import androidx.room.TypeConverter
 
 class ListConverter {
     @TypeConverter
-    fun fromString(stringListString: String): List<String> {
-        return stringListString.split(",").map { it }
+    fun toListOfStrings(flatStringList: String): List<String> {
+        return flatStringList.split(",")
     }
-
     @TypeConverter
-    fun toString(stringList: List<String>): String {
-        return stringList.joinToString(separator = ",")
+    fun fromListOfStrings(listOfString: List<String>): String {
+        return listOfString.joinToString(",")
     }
 }

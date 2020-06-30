@@ -5,26 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.layout_pays_list_item.view.*
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.geomob.BD.Pays
+import com.example.geomob.BD.Personnalite
 import com.example.geomob.R
+import kotlinx.android.synthetic.main.layout_personnalite_list_item.view.*
 import kotlin.collections.ArrayList
 
 
-class  PaysAdapter(var clickListner: OnPaysListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>()
+class  PersonnaliteAdapter(var clickListner: OnPersonnaliteListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {
 
     private val TAG: String = "AppDebug"
 
-    private var items: List<Pays> = ArrayList()
+    private var items: List<Personnalite> = ArrayList()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return PaysViewHolder(
+        return LivreViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.layout_pays_list_item,
+                R.layout.layout_personnalite_list_item,
                 parent,
                 false
             )
@@ -34,7 +34,7 @@ class  PaysAdapter(var clickListner: OnPaysListener) : RecyclerView.Adapter<Recy
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder) {
 
-            is PaysViewHolder -> {
+            is LivreViewHolder -> {
                 holder.bind(items.get(position), clickListner)
             }
 
@@ -45,20 +45,20 @@ class  PaysAdapter(var clickListner: OnPaysListener) : RecyclerView.Adapter<Recy
         return items.size
     }
 
-    fun submitList(pays: List<Pays>){
-        items = pays
+    fun submitList(personnalite: List<Personnalite>){
+        items = personnalite
     }
 
-    class PaysViewHolder
+    class LivreViewHolder
     constructor(
         itemView: View
     ): RecyclerView.ViewHolder(itemView){
 
-        val pays_drapeau = itemView.pays_drapeau
-        val pays_nom = itemView.pays_nom
-        val pays_description = itemView.pays_description
+        val personnalite_nom = itemView.personnalite_nom
+        val personnalite_image = itemView.personnalite_image
+        val personnalite_description = itemView.personnalite_description
 
-        fun bind(pays: Pays, action: OnPaysListener){
+        fun bind(personnalite: Personnalite, action: OnPersonnaliteListener){
 
             val requestOptions = RequestOptions()
                 .placeholder(R.drawable.ic_launcher_background)
@@ -66,13 +66,13 @@ class  PaysAdapter(var clickListner: OnPaysListener) : RecyclerView.Adapter<Recy
 
             Glide.with(itemView.context)
                 .applyDefaultRequestOptions(requestOptions)
-                .load(pays.drapeau)
-                .into(pays_drapeau)
-           pays_nom.setText(pays.nom)
-            pays_description.setText(pays.description)
+                .load(personnalite.image)
+                .into(personnalite_image)
+            personnalite_nom.setText(personnalite.nom)
+            personnalite_description.setText(personnalite.description)
 
             itemView.setOnClickListener{
-                action.onPaysClick(pays, adapterPosition )
+                action.onPersonnaliteClick(personnalite, adapterPosition )
             }
 
         }
@@ -81,8 +81,8 @@ class  PaysAdapter(var clickListner: OnPaysListener) : RecyclerView.Adapter<Recy
 
     }
 
-    public interface OnPaysListener {
-        fun onPaysClick(pays: Pays, position: Int)
+    public interface OnPersonnaliteListener {
+        fun onPersonnaliteClick(personnalite: Personnalite, position: Int)
     }
 
 }

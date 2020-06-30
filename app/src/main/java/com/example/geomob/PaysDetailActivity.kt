@@ -43,7 +43,7 @@ class PaysDetailActivity : AppCompatActivity() {
         //go to video activity
         video.setOnClickListener{
             val intent= Intent(this, VideosActivity::class.java)
-            intent.putExtra("video", "9Aebjmgn0bw")
+            intent.putExtra("video", getIntent().getStringExtra("video"))
             startActivity(intent)
         }
 
@@ -59,10 +59,27 @@ class PaysDetailActivity : AppCompatActivity() {
         }
 
         //go to ressources activity
+        ressouce.setOnClickListener{
+            val intent= Intent(this, RessourceActivity::class.java)
+            startActivity(intent)
+
+        }
 
         //go to historique activity
+        historique.setOnClickListener{
+            val intent= Intent(this, HistoriqueActivity::class.java)
+            startActivity(intent)
+
+        }
+
 
         //go to personnalite activity
+        personnalites.setOnClickListener{
+            val intent= Intent(this, PersonnaliteActivity::class.java)
+            startActivity(intent)
+
+        }
+
 
         //play hymne
         mediaPlayer= MediaPlayer.create(this, getIntent().getIntExtra("hymne", R.raw.hymne_algerie) )

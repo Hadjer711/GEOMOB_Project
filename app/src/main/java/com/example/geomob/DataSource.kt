@@ -20,7 +20,7 @@ class DataSource{
                     1,
                     1,
                     "https://fr.wikipedia.org/wiki/Alg%C3%A9rie",
-                    "test"
+                    "8d1ufOTT8oo,ZGsfmR-ZnkI,Pd1iee6M_d0"
                 )
 
             )
@@ -38,7 +38,7 @@ class DataSource{
                     1,
                     1,
                     "https://fr.wikipedia.org/wiki/Tunisie",
-                    "test"
+                    "GU-9Eo7JrL4,TPbPrsXfuU4,OxA9OmXYtEo"
                 )
 
             )
@@ -57,7 +57,7 @@ class DataSource{
                     1,
                     1,
                     "https://fr.wikipedia.org/wiki/Espagne",
-                    "test"
+                    "na0bVHjPW5A,JGz4Xacmkvw,aL4PLre3MpA"
                 )
 
             )
@@ -75,7 +75,7 @@ class DataSource{
                     1,
                     1,
                     "https://fr.wikipedia.org/wiki/Liban",
-                    "test"
+                    "ghjU_3L8ou0,FrOlmSPtnRw,ZMboBUeXkq0"
                 )
 
             )
@@ -93,7 +93,7 @@ class DataSource{
                     1,
                     1,
                     "https://fr.wikipedia.org/wiki/Chine",
-                    "test"
+                    "5uCXTjd-qDM,8lIUuFtkO3A,RSYSJ2BTH7w"
                 )
 
 

@@ -8,6 +8,7 @@ data class Personnalite(
     @PrimaryKey(autoGenerate = true)var id: Int? = null,
     var nom: String,
 
+    var image: String,
     var description: String,
 
     var lienWiki: String

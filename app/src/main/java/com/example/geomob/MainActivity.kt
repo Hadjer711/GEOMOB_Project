@@ -14,7 +14,7 @@ import com.example.projetgeomob.PaysDAO
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_pays_detail.*
 
-class MainActivity : AppCompatActivity(), PaysAdapter.OnLivreListener {
+class MainActivity : AppCompatActivity(), PaysAdapter.OnPaysListener {
     var toolbar: Toolbar? = null
     private lateinit var paysAdapter: PaysAdapter
     public var db: DataBase? = null
@@ -39,10 +39,11 @@ class MainActivity : AppCompatActivity(), PaysAdapter.OnLivreListener {
 
     }
     private fun addDataSet(){
+        val imageper= "https://www.dknews-dz.com/data/images/article/thumbs/d-musee-du-moudjahid-conference-sur-mohamed-larbi-ben-mhidi-927d5.jpg"
         val data= DataSource.createDataSet()
         val historique= Historique(1,"date test", "descriptiontest")
         val ressource= Ressource(1, "test", "test", "test")
-        val personnalite= Personnalite(1,"hey", "teststst", "lien")
+        val personnalite= Personnalite(1,"hey", imageper,"teststst", "lien")
         this.db = DataBase.invoke(this)
         this.daoHistorique = db?.historiqueDAO()
         this.daoPersonnalite = db?.personnaliteDAO()
@@ -73,7 +74,7 @@ class MainActivity : AppCompatActivity(), PaysAdapter.OnLivreListener {
 
     }
 
-    override fun onLivreClick(pays: Pays, position: Int) {
+    override fun onPaysClick(pays: Pays, position: Int) {
         Toast.makeText(this, pays.nom, Toast.LENGTH_SHORT).show()
         val orientation = resources.configuration.orientation
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -93,6 +94,8 @@ class MainActivity : AppCompatActivity(), PaysAdapter.OnLivreListener {
             intent.putExtra("images", pays.imagesSlides)
 
             intent.putExtra("wikipedia", pays.wikipedia)
+
+            intent.putExtra("video", pays.videos)
             startActivity(intent)
         }
 

@@ -62,7 +62,7 @@ class  RessourceAdapter(var clickListner: OnRessourceListener) : RecyclerView.Ad
 
             ressource_nom.setText(ressource.nom)
             ressource_quantite.setText(ressource.quantite)
-            ressource_type.setText(ressource.type)
+
 
             itemView.setOnClickListener{
                 action.onRessourceClick(ressource, adapterPosition )

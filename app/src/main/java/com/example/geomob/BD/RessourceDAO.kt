@@ -16,6 +16,9 @@ public interface RessourceDAO {
     @Query("SELECT * FROM ressource WHERE id = :num")
     fun getOneRessource(num: Int): List<Ressource>
 
+    @Query("SELECT * FROM ressource WHERE pays = :num")
+    fun getRessourcePays(num: Int): List<Ressource>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun ajouter(ressource: Ressource)
 

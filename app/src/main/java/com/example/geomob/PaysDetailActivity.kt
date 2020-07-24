@@ -2,21 +2,20 @@ package com.example.geomob
 
 import android.content.Intent
 import android.media.MediaPlayer
-import android.media.MediaSyncEvent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
-import androidx.core.net.toUri
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.geomob.UTILS.ImageSliderAdapter
 import com.example.geomob.UTILS.PaysAdapter
 
 import kotlinx.android.synthetic.main.fragment_pays_detail.*
-import java.lang.System.load
-import java.util.ServiceLoader.load
+
 
 class PaysDetailActivity : AppCompatActivity() {
+    private var id="0"
     private var mediaPlayer:MediaPlayer?= null
 
     lateinit var paysAdapter: PaysAdapter
@@ -35,6 +34,7 @@ class PaysDetailActivity : AppCompatActivity() {
         pays_nom.text = getIntent().getStringExtra("nom")
         pays_description.text = getIntent().getStringExtra("description")
         pays_population.text = getIntent().getStringExtra("population")
+        this.id=getIntent().getStringExtra("id")
 
 
 
@@ -61,6 +61,7 @@ class PaysDetailActivity : AppCompatActivity() {
         //go to ressources activity
         ressouce.setOnClickListener{
             val intent= Intent(this, RessourceActivity::class.java)
+            intent.putExtra("id", this.id)
             startActivity(intent)
 
         }
@@ -68,6 +69,7 @@ class PaysDetailActivity : AppCompatActivity() {
         //go to historique activity
         historique.setOnClickListener{
             val intent= Intent(this, HistoriqueActivity::class.java)
+            intent.putExtra("id", this.id)
             startActivity(intent)
 
         }
@@ -76,6 +78,7 @@ class PaysDetailActivity : AppCompatActivity() {
         //go to personnalite activity
         personnalites.setOnClickListener{
             val intent= Intent(this, PersonnaliteActivity::class.java)
+            intent.putExtra("id", this.id)
             startActivity(intent)
 
         }
@@ -103,9 +106,11 @@ class PaysDetailActivity : AppCompatActivity() {
     }
 
     private fun imageSliderImplementation() {
-        val images = getIntent().getStringExtra("images")
 
-        val adapter = ImageSliderAdapter(this,images)
+        Log.d("id", this.id)
+
+
+        val adapter = ImageSliderAdapter(this,this.id.toInt())
         viewpager.adapter = adapter
 
 

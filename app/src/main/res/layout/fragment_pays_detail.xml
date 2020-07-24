@@ -126,8 +126,9 @@
 
         <FrameLayout
             android:id="@+id/frameLayout2"
-            android:layout_width="421dp"
-            android:layout_height="132dp"
+            android:layout_width="395dp"
+            android:layout_height="250dp"
+            app:layout_constraintBottom_toTopOf="@+id/divider2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pays_surface">
@@ -153,78 +154,70 @@
 
         <TableLayout
             android:id="@+id/tableLayout"
-            android:layout_width="409dp"
-            android:layout_height="107dp"
+            android:layout_width="388dp"
+            android:layout_height="76dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent">
 
+
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <Button
                     android:id="@+id/historique"
-                    android:layout_width="135dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/endColor"
-                    android:text="Historique"
+                    android:text="      Historique  "
                     tools:layout_conversion_absoluteHeight="48dp"
                     tools:layout_conversion_absoluteWidth="88dp" />
 
                 <Button
                     android:id="@+id/ressouce"
-                    android:layout_width="135dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/endColor"
-                    android:text="Ressources"
+                    android:text="   Ressources  "
                     tools:layout_conversion_absoluteHeight="48dp"
                     tools:layout_conversion_absoluteWidth="88dp" />
 
                 <Button
                     android:id="@+id/personnalites"
-                    android:layout_width="135dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/endColor"
-                    android:text="Personnalités"
+                    android:text="    Personnalités  "
                     tools:layout_conversion_absoluteHeight="48dp"
                     tools:layout_conversion_absoluteWidth="88dp" />
             </TableRow>
-
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/wikipedia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+
+                    android:text="     Wikipedia  "
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_conversion_absoluteHeight="48dp"
+                    tools:layout_conversion_absoluteWidth="88dp"
+                    tools:layout_editor_absoluteY="757dp" />
 
                 <Button
                     android:id="@+id/video"
-                    android:layout_width="135dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:background="@drawable/round_button"
-                    android:text="Video"
+                    android:text="  Video  "
                     tools:layout_conversion_absoluteHeight="48dp"
-                    tools:layout_conversion_absoluteWidth="88dp" />
+                    tools:layout_conversion_absoluteWidth="88dp"
+                     />
 
-                <Button
-                    android:id="@+id/wikipedia"
-                    android:layout_width="107dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/round_button"
-
-                    android:text="Wikipedia"
-                    tools:layout_conversion_absoluteHeight="48dp"
-                    tools:layout_conversion_absoluteWidth="88dp" />
-
-                <Button
-                    android:id="@+id/tweet"
-                    android:layout_width="100dp"
-                    android:layout_height="48dp"
-                    android:background="@drawable/round_button"
-                    android:drawableLeft="@drawable/ic_twitter"
-                    android:text="Twitter"
-                    tools:layout_conversion_absoluteHeight="48dp"
-                    tools:layout_conversion_absoluteWidth="88dp" />
             </TableRow>
 
         </TableLayout>
@@ -238,18 +231,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="189dp"
-            android:layout_height="37dp"
-            android:layout_marginBottom="108dp"
-            android:text="Hymne Nationale"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/divider2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
-            app:layout_constraintVertical_bias="0.945" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

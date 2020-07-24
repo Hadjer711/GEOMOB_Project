@@ -15,6 +15,9 @@ public interface PersonnaliteDAO {
     @Query("SELECT * FROM personnalite WHERE id = :num")
     fun getOnePersonnalite(num: Int): List<Personnalite>
 
+    @Query("SELECT * FROM personnalite WHERE pays = :num")
+    fun getPersonnalitePays(num: Int): List<Personnalite>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun ajouter(personnalite: Personnalite)
 

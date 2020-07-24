@@ -3,6 +3,7 @@ package com.example.geomob
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -35,31 +36,35 @@ class MainActivity : AppCompatActivity(), PaysAdapter.OnPaysListener {
 
 
     }
-    private fun addDataSetToRoom(){
 
-    }
     private fun addDataSet(){
-        val imageper= "https://www.dknews-dz.com/data/images/article/thumbs/d-musee-du-moudjahid-conference-sur-mohamed-larbi-ben-mhidi-927d5.jpg"
-        val data= DataSource.createDataSet()
-        val historique= Historique(1,"date test", "descriptiontest")
-        val ressource= Ressource(1, "test", "test", "test")
-        val personnalite= Personnalite(1,"hey", imageper,"teststst", "lien")
+        val dataPays= DataSource.createDataSet()
+        val dataHistorique =DataSource.createDataSetHistorique()
+        val dataPersonnalite= DataSource.createDataSetPersonnalite()
+        val dataRessource= DataSource.createDataSetRessource()
         this.db = DataBase.invoke(this)
-        this.daoHistorique = db?.historiqueDAO()
-        this.daoPersonnalite = db?.personnaliteDAO()
-        this.daoRessource = db?.ressourceDAO()
-        this.daoPersonnalite?.ajouter(personnalite)
-        this.daoRessource?.ajouter(ressource)
-        this.daoHistorique?.ajouter(historique)
-
-
-
-        for(pays in data){
+        for(pays in dataPays){
             this.dao = db?.paysDAO()
             this.dao?.ajouter(pays)
 
         }
+        for(historique in dataHistorique){
+            this.daoHistorique = db?.historiqueDAO()
+            this.daoHistorique?.ajouter(historique)
+
+        }
+        for(ressource in dataRessource){
+            this.daoRessource = db?.ressourceDAO()
+            this.daoRessource?.ajouter(ressource)
+
+        }
+        for(personnalite in dataPersonnalite){
+            this.daoPersonnalite = db?.personnaliteDAO()
+            this.daoPersonnalite?.ajouter(personnalite)
+
+        }
         this.dao?.getPays()?.let { paysAdapter.submitList(it) }
+
 
     }
 
@@ -91,7 +96,7 @@ class MainActivity : AppCompatActivity(), PaysAdapter.OnPaysListener {
             intent.putExtra("drapeau", "drapeau : "+pays.drapeau)
             intent.putExtra("drapeau", pays.drapeau)
             intent.putExtra("hymne", pays.hymne)
-            intent.putExtra("images", pays.imagesSlides)
+            intent.putExtra("id", pays.id.toString())
 
             intent.putExtra("wikipedia", pays.wikipedia)
 

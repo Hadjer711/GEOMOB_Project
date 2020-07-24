@@ -15,6 +15,9 @@ public interface HistoriqueDAO {
     @Query("SELECT * FROM historique WHERE id = :num")
     fun getOneHistorique(num: Int): List<Historique>
 
+    @Query("SELECT * FROM historique WHERE pays = :num")
+    fun getHistoriquePays(num: Int): List<Historique>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun ajouter(historique: Historique)
 

@@ -5,25 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.geomob.BD.Historique
 
 import com.example.geomob.BD.Ressource
 import com.example.geomob.R
-import kotlinx.android.synthetic.main.layout_ressource_list_item.view.*
+import kotlinx.android.synthetic.main.layout_historique_list_item.view.*
 import kotlin.collections.ArrayList
 
 
-class  HistoriqueAdapter(var clickListner: OnRessourceListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>()
+class  HistoriqueAdapter(var clickListner: OnHistoriqueListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {
 
     private val TAG: String = "AppDebug"
 
-    private var items: List<Ressource> = ArrayList()
+    private var items: List<Historique> = ArrayList()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return ressourceViewHolder(
+        return historiqueViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.layout_ressource_list_item,
+                R.layout.layout_historique_list_item,
                 parent,
                 false
             )
@@ -33,7 +34,7 @@ class  HistoriqueAdapter(var clickListner: OnRessourceListener) : RecyclerView.A
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder) {
 
-            is ressourceViewHolder -> {
+            is historiqueViewHolder -> {
                 holder.bind(items.get(position), clickListner)
             }
 
@@ -44,28 +45,28 @@ class  HistoriqueAdapter(var clickListner: OnRessourceListener) : RecyclerView.A
         return items.size
     }
 
-    fun submitList(ressource: List<Ressource>){
-        items = ressource
+    fun submitList(historique: List<Historique>){
+        items = historique
     }
 
-    class ressourceViewHolder
+    class historiqueViewHolder
     constructor(
         itemView: View
     ): RecyclerView.ViewHolder(itemView){
 
-        val ressource_nom = itemView.ressouce_nom
-        val ressource_type = itemView.ressource_type
-        val ressource_quantite = itemView.ressource_quantite
-
-        fun bind(ressource: Ressource, action: OnRessourceListener){
+        val historique_date = itemView.historique_date
+        val historique_description = itemView.historique_description
 
 
-            ressource_nom.setText(ressource.nom)
-            ressource_quantite.setText(ressource.quantite)
-            ressource_type.setText(ressource.type)
+        fun bind(historique: Historique, action: OnHistoriqueListener){
+
+
+            historique_date.setText(historique.date)
+            historique_description.setText(historique.description)
+
 
             itemView.setOnClickListener{
-                action.onRessourceClick(ressource, adapterPosition )
+                action.onHistoriqueClick(historique, adapterPosition )
             }
 
         }
@@ -74,8 +75,8 @@ class  HistoriqueAdapter(var clickListner: OnRessourceListener) : RecyclerView.A
 
     }
 
-    public interface OnRessourceListener {
-        fun onRessourceClick(ressource: Ressource, position: Int)
+    public interface OnHistoriqueListener {
+        fun onHistoriqueClick(historique: Historique, position: Int)
     }
 
 }

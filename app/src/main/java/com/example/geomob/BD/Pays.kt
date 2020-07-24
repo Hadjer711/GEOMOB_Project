@@ -3,14 +3,9 @@ package com.example.geomob.BD
 import androidx.room.*
 import com.example.geomob.UTILS.ListConverter
 
-@Entity(tableName = "pays",indices = [Index("historique"), Index("personnalite"), Index("ressource")], foreignKeys = [ForeignKey(entity = Historique::class,
-    parentColumns = ["id"], childColumns = ["historique"]),ForeignKey(entity = Personnalite::class,
-    parentColumns = ["id"], childColumns = ["personnalite"]),
-    ForeignKey(entity = Ressource::class,
-        parentColumns = ["id"], childColumns = ["ressource"])
-])
+@Entity(tableName = "pays")
 data class Pays(
-    @PrimaryKey(autoGenerate = true)var id: Int? = null,
+    @PrimaryKey var id: Int? = null,
     var nom: String,
 
     var description: String,
@@ -22,15 +17,10 @@ data class Pays(
     var population: Int,
 
 
-    var imagesSlides : String,
+    var imagesSlides : Int,
 
     var hymne : Int,
 
-    var historique: Int?,
-
-    var personnalite: Int?,
-
-    var ressource: Int?,
 
     var wikipedia: String,
 

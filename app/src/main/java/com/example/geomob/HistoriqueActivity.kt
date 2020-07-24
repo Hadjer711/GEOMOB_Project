@@ -2,15 +2,20 @@ package com.example.geomob
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.geomob.BD.Ressource
+import com.example.geomob.BD.Historique
+import com.example.geomob.BD.HistoriqueDAO
+
 import com.example.geomob.UTILS.HistoriqueAdapter
-import com.example.geomob.UTILS.HistoriqueAdapter.OnRessourceListener
-import com.example.geomob.UTILS.PaysAdapter
+
+import com.example.projetgeomob.DataBase
 import kotlinx.android.synthetic.main.activity_main.*
 
-class HistoriqueActivity : AppCompatActivity() , OnRessourceListener{
+class HistoriqueActivity : AppCompatActivity() , HistoriqueAdapter.OnHistoriqueListener{
+    public var db: DataBase? = null
+    var daoHistorique: HistoriqueDAO? = null
 
     var toolbar: Toolbar? = null
     private lateinit var historiqueAdapter: HistoriqueAdapter
@@ -20,6 +25,7 @@ class HistoriqueActivity : AppCompatActivity() , OnRessourceListener{
         toolbar=findViewById(R.id.toolbar)
 
         initRecycleView()
+        getData()
     }
 
 
@@ -34,7 +40,17 @@ class HistoriqueActivity : AppCompatActivity() , OnRessourceListener{
 
     }
 
-    override fun onRessourceClick(ressource: Ressource, position: Int) {
+    private fun getData(){
+        var id = getIntent().getStringExtra("id").toInt()
+        Log.d("id ressource", id.toString())
+        this.db = DataBase.invoke(this)
+        this.daoHistorique = db?.historiqueDAO()
+        this.daoHistorique?.getHistoriquePays(id)?.let { historiqueAdapter.submitList(it) }
+    }
+
+    override fun onHistoriqueClick(historique: Historique, position: Int) {
         TODO("Not yet implemented")
     }
+
+
 }
